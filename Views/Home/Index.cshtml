@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" />
+}
+
+
+<main role="main">
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="~/videos/Black and White Modern Quote About Work Facebook Video.mp4" type="video/mp4">
+            Désolé, votre navigateur ne prend pas en charge la vidéo.
+        </video>
+    </div>
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+        <img src="~/images/logo.png" />
+        <p>Simplifiez la gestion de vos visiteurs, superviseurs et administrateurs grâce à une solution innovante et intuitive. Optimisez l'accueil, le suivi et la coordination avec des outils conçus pour répondre à vos besoins. Découvrez une plateforme complète pour une organisation fluide et performante.</p>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="statistics">
+        <div class="stat-box">
+            <img src="~/images/user.png" />
+            <h3>100+</h3>
+            <p>Visiteurs</p>
+        </div>
+        <div class="stat-box">
+            <img src="~/images/businessmen.png" />
+            <h3>50+</h3>
+            <p>Superviseurs</p>
+        </div>
+        <div class="stat-box">
+            <img src="~/images/businessmen.png" />
+            <h3>10+</h3>
+            <p>Administrateurs</p>
+        </div>
+    </div>
+
+    <!-- Featured Content Section -->
+    <div class="featured-content">
+        <h2>Contenus clés</h2>
+        <div class="feature-boxes">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Gestion des visiteurs</h5>
+                    <p class="card-text">Apprenez à gérer efficacement les visiteurs grâce à nos outils complets.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Perspectives du superviseur </h5>
+                    <p class="card-text">Obtenez des informations et des analyses détaillées pour les superviseurs.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Solutions de sécurité</h5>
+                    <p class="card-text">Découvrez des solutions de sécurité robustes et adaptées à vos besoins.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, feel free to reach out!</p>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</main>

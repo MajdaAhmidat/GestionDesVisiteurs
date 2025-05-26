@@ -1,0 +1,51 @@
+﻿@model gestion_des_visiteurs.Models.Visite
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/createVisite.css" />
+}
+
+<h4>Créer une visite</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="dateVisite" class="control-label">Date de visite</label>
+                <input asp-for="dateVisite" class="form-control" />
+                <span asp-validation-for="dateVisite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="heureDebut" class="control-label">Heure de début</label>
+                <input asp-for="heureDebut" class="form-control" />
+                <span asp-validation-for="heureDebut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="heureFin" class="control-label">Heure de fin</label>
+                <input asp-for="heureFin" class="form-control" />
+                <span asp-validation-for="heureFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="duree" class="control-label">Durée</label>
+                <input asp-for="duree" class="form-control" />
+                <span asp-validation-for="duree" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idVisiteur" class="control-label">Nom du visiteur</label>
+                <select asp-for="idVisiteur" class="form-control" asp-items="ViewBag.idVisiteur"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Créer" id="create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary" id="abrt">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

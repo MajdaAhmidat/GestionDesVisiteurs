@@ -1,0 +1,56 @@
+﻿@model gestion_des_visiteurs.Models.Visiteur
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/visiteurDetails.css" />
+}
+
+<div>
+    <h4>Details sur le visiteur</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+        <dt class = "col-sm-2">
+            Prenom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt class = "col-sm-2">
+            Numero du telephone
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.telephone)
+        </dd>
+        <dt class = "col-sm-2">
+            CIN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cin)
+        </dd>
+        <dt class = "col-sm-2">
+            ID du superviseur
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idSuperviseur)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-secondary">Modifier</a> |
+    <a asp-action="Index" class="btn btn-secondary">Revenir à la liste</a>
+</div>

@@ -1,0 +1,19 @@
+﻿.table {
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #8c898e;
+}
+
+footer {
+    display: none;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}

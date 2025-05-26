@@ -1,0 +1,52 @@
+﻿@model gestion_des_visiteurs.Models.Visite
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/visiteDelete.css" />
+}
+
+<h3>Voulez-vous vraiment supprimer cette visite ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Date de visite
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dateVisite)
+        </dd>
+        <dt class = "col-sm-2">
+            Heure de début
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.heureDebut)
+        </dd>
+        <dt class = "col-sm-2">
+            Heure de fin
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.heureFin)
+        </dd>
+        <dt class = "col-sm-2">
+            Durée
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.duree)
+        </dd>
+        <dt class = "col-sm-2">
+            ID du visiteur
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idVisiteur)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Revenir à la liste</a>
+    </form>
+</div>

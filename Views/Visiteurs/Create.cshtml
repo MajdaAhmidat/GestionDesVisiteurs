@@ -1,0 +1,56 @@
+﻿@model gestion_des_visiteurs.Models.Visiteur
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/createVisiteur.css" />
+}
+
+<h4>Créer un visiteur</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nom" class="control-label">Nom</label>
+                <input asp-for="nom" class="form-control" />
+                <span asp-validation-for="nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="prenom" class="control-label">Prenom</label>
+                <input asp-for="prenom" class="form-control" />
+                <span asp-validation-for="prenom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="email" class="control-label">Email</label>
+                <input asp-for="email" class="form-control" />
+                <span asp-validation-for="email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telephone" class="control-label">Numero de telephone</label>
+                <input asp-for="telephone" class="form-control" />
+                <span asp-validation-for="telephone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="cin" class="control-label">CIN</label>
+                <input asp-for="cin" class="form-control" />
+                <span asp-validation-for="cin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idSuperviseur" class="control-label">Nom du superviseur</label>
+                <select asp-for="idSuperviseur" class="form-control" asp-items="ViewBag.idSuperviseur"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Créer" id="create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary" id="abrt">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,199 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #8c898e;
+    font-family: "EB Garamond", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Dropdown menu styles */
+.navbar-nav .dropdown-menu {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #f8f9fa;
+    margin-top: 0.5rem;
+    padding: 0;
+    list-style: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.25rem;
+}
+
+/* Show dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* Dropdown item styles */
+.navbar-nav .dropdown-menu .dropdown-item {
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    color: #000;
+    display: block;
+}
+
+    .navbar-nav .dropdown-menu .dropdown-item:hover {
+        background-color: #e9ecef;
+        color: #000;
+    }
+
+/* Prevent visual shifting */
+.navbar-nav .dropdown {
+    position: relative;
+}
+
+/* Navbar brand styles */
+.navbar-brand {
+    font-family: "Fira Sans", serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+    .navbar-brand img {
+        width: 250px;
+    }
+.navbar-nav .nav-link {
+    font-family: "EB Garamond", serif; /* Match the font of the logo */
+    font-size: 18px;
+    font-weight: 400; /* Adjust weight if needed */
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover {
+        color: #000;
+}
+
+
+/* Content area */
+.content {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+/* Footer styles */
+footer {
+    padding-top: 35px;
+    margin-bottom: 0;
+    color: white;
+    flex-grow: 1;
+    width: 100%;
+    background-color: transparent;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Footer content */
+.footer-content {
+    width: 33.3%;
+    text-align: center;
+}
+
+h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-container .list li a {
+    color: white;
+    text-decoration: none;
+}
+
+.list {
+    padding: 0;
+    color: #ffae00;
+}
+
+    .list li {
+        text-align: center;
+        list-style-type: none;
+        padding: 7px;
+    }
+
+/* Social icons */
+.social-icons {
+    text-align: center;
+    padding: 0;
+}
+
+    .social-icons li {
+        display: inline-block;
+        padding: 5px;
+    }
+
+        .social-icons li a img {
+            width: 35px;
+        }
+
+            .social-icons li a img:nth-child(4) {
+                width: 27px;
+            }
+
+/* Link hover effect */
+.list li a {
+    color: black;
+    text-decoration: none;
+}
+
+    .list li a:hover {
+        text-decoration: underline;
+    }
+
+/* Bottom bar */
+.bottom-bar {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 50px;
+}
+
+    .bottom-bar p {
+        margin: 0;
+        font-size: 16px;
+        padding: 7px;
+    }
+
+/* Inline links */
+.inline-links {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .inline-links .nav-item {
+        display: inline-block;
+    }
+
+    .inline-links .nav-link {
+        text-decoration: none;
+        color: inherit;
+        padding: 5px 10px;
+    }
+
+        .inline-links .nav-link:hover {
+            text-decoration: underline;
+        }
+
+.collapse{
+    margin-right : 40px;
+}

@@ -1,0 +1,41 @@
+﻿
+@model gestion_des_visiteurs.Models.Administrateur
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/administrateurDelete.css" />
+}
+
+<h3>Voulez-vous vraiment supprimer cet administrateur ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+        <dt class = "col-sm-2">
+            Prenom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary" id="abrt">Annuler</a>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+﻿@model gestion_des_visiteurs.Models.Superviseur
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/superviseurDelete.css" />
+}
+
+<h3>Voulez-vous vraiment supprimer ce superviseur ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Nom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nom)
+        </dd>
+        <dt class = "col-sm-2">
+            Prenom
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.prenom)
+        </dd>
+        <dt class = "col-sm-2">
+            Email
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.email)
+        </dd>
+        <dt class = "col-sm-2">
+            Numero du telephone
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.telephone)
+        </dd>
+        <dt class = "col-sm-2">
+            CIN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.cin)
+        </dd>
+        <dt class = "col-sm-2">
+            ID de l'administrateur
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.idAdministrateur)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-secondary">Revenir à la liste</a>
+    </form>
+</div>

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - gestion_des_visiteurs</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/gestion_des_visiteurs.styles.css" asp-append-version="true" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" asp-controller="home" asp-action="index">
+                <img src="~/images/logo1.png" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Superviseurs" asp-action="Index">Superviseurs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Administrateurs" asp-action="Index">Administrateurs</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-item" asp-area="" asp-controller="Visiteurs" asp-action="Index" onmouseover="drop()">Visiteurs</a>
+                        <ul class="dropdown-menu" id="list">
+                            <li>
+                                <a class="dropdown-item" asp-area="" asp-controller="Visites" asp-action="Index">Visites</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="content">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        <footer>
+            <div class="container">
+                <div class="footer-container">
+                    <h3>Liens</h3>
+                    <ul class="list">
+                        <li><a asp-area="" asp-controller="Superviseurs" asp-action="Index">Superviseurs</a></li>
+                        <li><a asp-area="" asp-controller="Administrateur" asp-action="Index">Administrateurs</a></li>
+                        <li><a asp-area="" asp-controller="Visiteurs" asp-action="Index">Visiteurs</a></li>
+                        <li><a asp-area="" asp-controller="Demandes" asp-action="Index">Demandes</a></li>
+                        <li><a asp-area="" asp-controller="Visites" asp-action="Index">Visites</a></li>
+                    </ul>
+                </div>
+                <div class="footer-container">
+                    <h3>Contact</h3>
+                    <p>Hamilton Avenue San Jose,<br /> California 95125 USA</p>
+                    <p>646-536-2842</p>
+                </div>
+                <div class="footer-container">
+                    <h3>Réseaux sociaux</h3>
+                    <ul class="social-icons">
+                        <li><a href=""><img src="~/images/facebook.png" /></a></li>
+                        <li><a href=""><img src="~/images/instagram.png" /></a></li>
+                        <li><a href=""><img src="~/images/twitter.png" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        function drop(){
+            let list = document.getElementById("list");
+            list.display = block;
+        }
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<gestion_des_visiteurs.Models.Visite>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/visiteIndex.css" />
+}
+
+<h1>Liste des visites</h1>
+
+<p>
+    <a asp-action="Create"><button class="btn btn-primary">Ajouter une visite</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Date de visite
+            </th>
+            <th>
+                Heure de début
+            </th>
+            <th>
+                Heure de fin
+            </th>
+            <th>
+                Durée
+            </th>
+            <th>
+               Nom du visiteur
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateVisite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.heureDebut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.heureFin)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.duree)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.idVisiteur)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id"><button id="mod" class="btn btn-primary">Modifier</button></a> |
+                <a asp-action="Details" asp-route-id="@item.Id"><button id="det" class="btn btn-primary">Details</button></a> |
+                <a asp-action="Delete" asp-route-id="@item.Id"><button id="del" class="btn btn-primary">Supprimer</button></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

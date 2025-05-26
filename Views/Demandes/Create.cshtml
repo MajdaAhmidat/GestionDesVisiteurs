@@ -1,0 +1,45 @@
+﻿@model gestion_des_visiteurs.Models.Demande
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/createDemande.css" />
+}
+
+<h4>Créer une demande</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="nom" class="control-label">Nom</label>
+                <input asp-for="nom" class="form-control" />
+                <span asp-validation-for="nom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="description" class="control-label">Description</label>
+                <input asp-for="description" class="form-control" />
+                <span asp-validation-for="description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="idVisiteur" class="control-label">Nom du visiteur</label>
+                <select asp-for="idVisiteur" class ="form-control" asp-items="ViewBag.idVisiteur"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="idSuperviseur" class="control-label">Nom du superviseur</label>
+                <select asp-for="idSuperviseur" class ="form-control" asp-items="ViewBag.idSuperviseur"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Créer" id="create" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary" id="abrt">Annuler</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
